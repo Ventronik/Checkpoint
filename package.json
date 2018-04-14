@@ -1,0 +1,29 @@
+{
+  "name": "checkpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ventronik/Checkpoint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ventronik/Checkpoint/issues"
+  },
+  "homepage": "https://github.com/Ventronik/Checkpoint#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "live-server": "^1.2.0",
+    "morgan": "^1.9.0",
+    "shortid": "^2.2.8"
+  }
+}
