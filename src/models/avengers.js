@@ -29,12 +29,15 @@ function getOne(id){
   }
 }
 
-function create(name){
+function create(character){
+  const name = character.name
+  const weapon = character.weapon
+  const teams = character.teams || []
+
   const content = fs.readFileSync(file, 'utf-8')
-  console.log(req.body)
+
   const avengers = JSON.parse(content)
-  //[]
-  const avenger = { id: shortid.generate(), name }
+  const avenger = { id: shortid.generate(), name, weapon, teams }
   avengers.push(avenger)
   //[...]
   //write it
@@ -44,11 +47,15 @@ function create(name){
   return { data: avenger }
 }
 
-function update(id, name){
+function update(id, updateInfo){
+  const content = fs.readFileSync(file, 'utf-8')
+  const avengers = JSON.parse(content)
   const avenger = avengers.find(avenger => avenger.id === id)
 
   if(avenger){
-    avenger.name = name
+    if (updateInfo.name) avenger.name = updateInfo.name
+    if (updateInfo.weapon) avenger.weapon = updateInfo.weapon
+    if (updateInfo.teams) avenger.teams = updateInfo.teams
     return { data: avenger}
   }
   else {
